@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hockey Shot Trainer | Jesse Hill</title>
+  <meta name="description" content="AI-assisted Hockey Shot Trainer web app page for Jesse Hill's IS 201 project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">Jesse Hill</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="siteNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="scratch.html">Scratch Page</a></li>
+          <li class="nav-item"><a class="nav-link active" href="webapp.html">AI Web App</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5 app-page">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-6">
+          <p class="eyebrow text-dark">AI-Assisted Web App</p>
+          <h1 class="section-title">Hockey Shot Trainer</h1>
+          <p class="section-copy">This app simulates a lightweight AI coach. Choose a shot type and a game situation, then receive a target location, a coaching cue, and a confidence reminder focused on execution under pressure.</p>
+          <div class="app-panel">
+            <form id="shot-trainer-form" class="row g-3">
+              <div class="col-12">
+                <label class="form-label" for="shotType">Shot Type</label>
+                <select class="form-select" id="shotType" required>
+                  <option value="wrist">Wrist Shot</option>
+                  <option value="snap">Snap Shot</option>
+                  <option value="slap">Slap Shot</option>
+                  <option value="backhand">Backhand</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="situation">Game Situation</label>
+                <select class="form-select" id="situation" required>
+                  <option value="rush">Off the Rush</option>
+                  <option value="slot">In the Slot</option>
+                  <option value="powerplay">Power Play</option>
+                  <option value="breakaway">Breakaway</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg w-100">Generate Coaching Advice</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="results-panel" id="shot-results" aria-live="polite">
+            <p class="eyebrow text-dark">Training Output</p>
+            <h2>Ready for your next rep</h2>
+            <p>Select a shot type and game situation to generate your coaching advice.</p>
+            <div class="net-visual" aria-label="Hockey net shot target visual">
+              <div class="net-frame">
+                <div class="goal-grid"></div>
+                <div class="goal-label top-left">Top Left</div>
+                <div class="goal-label top-right">Top Right</div>
+                <div class="goal-label low-left">Low Left</div>
+                <div class="goal-label low-right">Low Right</div>
+                <div class="goal-label five-hole">Five Hole</div>
+                <div class="target-dot" id="targetDot"></div>
+              </div>
+              <p class="net-caption">The highlighted target updates with each coaching recommendation.</p>
+            </div>
+            <div class="result-block">
+              <h3>Target location</h3>
+              <p id="targetLocation">Waiting for input.</p>
+            </div>
+            <div class="result-block">
+              <h3>Coaching cue</h3>
+              <p id="coachingCue">Waiting for input.</p>
+            </div>
+            <div class="result-block">
+              <h3>Confidence tip</h3>
+              <p id="confidenceTip">Waiting for input.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <p class="mb-0">Jesse Hill | Hockey Shot Trainer</p>
+      <p class="mb-0">Built for GitHub Pages as a static AI-assisted web app</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
